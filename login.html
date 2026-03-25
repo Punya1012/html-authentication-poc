@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
-</head>
-<body>
+<title>Login</title>
 
-    <h2>Login Page</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="d-flex justify-content-center align-items-center vh-100">
+
+<div class="card p-4" style="width: 350px;">
+    <h3 class="text-center mb-3">Login</h3>
 
     <form action="dashboard.html">
-        <label>Username:</label><br>
-        <input type="text" required><br><br>
+        <input type="email" class="form-control mb-3" placeholder="Email" required>
 
-        <label>Password:</label><br>
-        <input type="password" required><br><br>
+        <div class="input-group mb-3">
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <span class="input-group-text" onclick="togglePassword()">
+                <i class="bi bi-eye"></i>
+            </span>
+        </div>
 
-        <button type="submit">Login</button>
+        <button class="btn btn-custom w-100">Login</button>
     </form>
 
-    <br>
-    <a href="forgot.html">Forgot Password?</a><br><br>
-    <a href="register.html">Create a New Account</a>
+    <div class="text-center mt-3">
+        <a href="forgot.html">Forgot Password?</a><br>
+        <a href="register.html">Create Account</a>
+    </div>
+</div>
+
+<script>
+function togglePassword() {
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+</script>
 
 </body>
 </html>
